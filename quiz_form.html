@@ -5,7 +5,7 @@
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
         <title>Quiz Form</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/quiz_form_style.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/quiz_form_style.css'>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     </head>
@@ -14,12 +14,12 @@
         <nav>
             <ul class="quizes">
                 <li>
-                    <a href="#">
+                    <a href="./index.html">
                         <img src="assets/img/navbar_icons/home.png" alt="Home">
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="active">
+                    <a href="./quiz_form.html">
                         <img src="assets/img/navbar_icons/quiz.png" alt="Quiz">
                     </a>
                 </li>
@@ -32,7 +32,7 @@
     
             <ul class="contact">
                 <li>
-                    <a href="#">
+                    <a href="./dev_page.html">
                         <img src="assets/img/navbar_icons/dev.png" alt="Developers">
                     </a>
                 </li>
@@ -52,13 +52,17 @@
                 <div class="input_console">
 
                     <p class="above_input">Topic</p>
-                    <input type="text" class="input_q"></input>
+                    <select type="text" id="topic_input" class="input_q"></select>
 
                     <p class="above_input">Difficulty</p>
-                    <input type="text" class="input_q"></input>
+                    <select type="text" id="diff_input" class="input_q">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
 
                     <p class="above_input">Number of questions</p>
-                    <input type="text" class="input_q"></input>
+                    <input type="number" id="num_of_questions" class="input_q"></input>
 
 
                 </div>
@@ -90,6 +94,6 @@
         </svg>  
         
         
-        <script src='main.js'></script>
+        <script src='./assets/js/main.js'></script>
     </body>
 </html>
