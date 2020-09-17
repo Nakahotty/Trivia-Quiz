@@ -120,7 +120,6 @@ p {
 .awnsers {
     display: flex;
     flex-direction: column;
-    margin-left: 4em;
     margin-top: 1em;
 }
 
@@ -128,7 +127,14 @@ p {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 5%;
+    height: 6vh;
+    margin-top: 3%;
+    transition: 500ms;
+}
+
+.awnser:hover {
+    height: 7vh;
+    background-color: rgb(255, 255, 255,0.2);
 }
 
 .marker {
@@ -137,13 +143,24 @@ p {
     border: none;
     outline: none;
     border-radius: 100%;
-    margin-right: 3%;
+    margin-right: 2em;
+    margin-left: 5em;
+}
+
+li p {
+    width: 90%;
+    text-align: left;
+}
+
+.bottom {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    
 }
 
 .next {
-    align-self: flex-end;
-    margin-right: 1em;
-    margin-bottom: 0.5em;
+    margin: 3%;
     width: 287px;
     height: 85px;
     background: #37FFAF 0% 0% no-repeat padding-box;
