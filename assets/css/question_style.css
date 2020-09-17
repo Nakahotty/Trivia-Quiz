@@ -133,6 +133,7 @@ p {
 }
 
 .awnser:hover {
+    cursor: pointer;
     height: 7vh;
     background-color: rgb(255, 255, 255,0.2);
 }
@@ -145,6 +146,10 @@ p {
     border-radius: 100%;
     margin-right: 2em;
     margin-left: 5em;
+}
+
+.marker:hover {
+    cursor: pointer;
 }
 
 li p {
