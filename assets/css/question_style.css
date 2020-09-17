@@ -6,7 +6,7 @@
 
 
 body {
-    background: transparent url('/assets/img/bg.png') 0% 0% no-repeat padding-box;
+    background: transparent url('../img/bg.png') 0% 0% no-repeat padding-box;
     background-size: cover;
     overflow: hidden;
 }
@@ -57,7 +57,6 @@ nav ul li a img {
 nav .contact {
     bottom: 10px;
 }
-
 
 main {
     margin: auto;
