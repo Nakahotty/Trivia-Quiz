@@ -3,7 +3,7 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Page Title</title>
+        <title>Quiz Form</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/quiz_form_style.css'>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -11,30 +11,84 @@
     </head>
     
     <body>
+        <nav>
+            <ul class="quizes">
+                <li>
+                    <a href="#">
+                        <img src="assets/img/navbar_icons/home.png" alt="Home">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/navbar_icons/quiz.png" alt="Quiz">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/navbar_icons/random.png" alt="Random">
+                    </a>
+                </li>
+            </ul>
+    
+            <ul class="contact">
+                <li>
+                    <a href="#">
+                        <img src="assets/img/navbar_icons/dev.png" alt="Developers">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="assets/img/navbar_icons/credits.png" alt="Credits">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
         <main>
+            
+
             <div class="quiz_console">
                 <h2>Choose your quiz!</h2>
                 <div class="input_console">
-                    <p class="above_input">number of questions</p>
+
+                    <p class="above_input">Topic</p>
                     <input type="text" class="input_q"></input>
-                    <p class="above_input">number of questions</p>
+
+                    <p class="above_input">Difficulty</p>
                     <input type="text" class="input_q"></input>
-                    <p class="above_input">number of questions</p>
+
+                    <p class="above_input">Number of questions</p>
                     <input type="text" class="input_q"></input>
-                    <p class="above_input">number of questions</p>
-                    <input type="text" class="input_q"></input>
+
+
                 </div>
-                <button>Take quiz</button>
+                <button class="quiz_btn">Take quiz</button>
             </div>
 
             <div class="divider">
-
+                <h2 id="or">or</h2>
             </div>
 
             <div class="random">
-
+                <h2>Take a random quiz!</h2>
+                <button class="quiz_btn">randomize</button>
             </div>
+
+              
+        
         </main>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -100 1500 330">
+
+            <defs>
+                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#3340A2; stop-opacity: 1"></stop>
+                    <stop offset="100%" style="stop-color: #3340A2; stop-opacity: 1"></stop>
+                </linearGradient>
+            </defs>
+    
+            <path class="st0" fill="#5000ca" fill-opacity="1" d="M0,96L40,101.3C80,107,160,117,240,122.7C320,128,400,128,480,128C560,128,640,128,720,112C800,96,880,64,960,64C1040,64,1120,96,1200,106.7C1280,117,1360,107,1400,101.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+        </svg>  
+        
         
         <script src='main.js'></script>
     </body>

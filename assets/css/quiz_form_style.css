@@ -1,29 +1,114 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
+
 body {
-    display: flex;
-    width: 100%;
-    height: 100vh;
     background: transparent url('/assets/img/bg.png') 0% 0% no-repeat padding-box;
     background-size: cover;
+    overflow: hidden;
+}
+
+nav {
+    display: flex;
+    float: left;
+    width: 75px;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+    background-color: #3340A2;
+}
+
+nav ul {
+    list-style: none;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav ul li {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    background-color: #FD9EFF;
+    transition: 0.3s all;
+}
+
+nav ul a {
+    display: block;
+}
+
+nav ul li a img {
+    display: block;
+    max-width: 30px;
+}
+
+nav .contact {
+    bottom: 10px;
+}
+
+.st0 {
+    opacity: 1;
+    fill: url(#grad);
+    stroke: #1a001a00;
+    stroke-width: 0;
+}
+
+svg {
+    transform: rotate(180deg);
+    width: 100%;
+}
+
+path {
+    animation: anim 3s infinite forwards;
+}
+
+
+@keyframes anim {
+    0% {
+        d:path("M0,96L40,101.3C80,107,160,117,240,122.7C320,128,400,128,480,128C560,128,640,128,720,112C800,96,880,64,960,64C1040,64,1120,96,1200,106.7C1280,117,1360,107,1400,101.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z");
+    }
+    50% {
+        d:path("M0,128L40,154.7C80,181,160,235,240,229.3C320,224,400,160,480,122.7C560,85,640,75,720,96C800,117,880,171,960,181.3C1040,192,1120,160,1200,160C1280,160,1360,192,1400,208L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z");
+    }
+    100% {
+        d:path("M0,96L40,101.3C80,107,160,117,240,122.7C320,128,400,128,480,128C560,128,640,128,720,112C800,96,880,64,960,64C1040,64,1120,96,1200,106.7C1280,117,1360,107,1400,101.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z");
+    }
 }
 
 main {
-    width: 95%;
+    width: 100%;
+    margin-left: 4em;
     height: 75vh;
-    margin-left: auto;
     display: flex;
     background: #3340A2 0% 0% no-repeat padding-box;
 }
 
+.quiz_console {
+    margin: 3%;
+}
+
+h2 {
+    font: normal normal bold 30px/41px 'Nunito', sans-serif;
+    color: #FFFFFF;
+}
+
 .input_console {
+    
+   margin-top: 5%;
    display: flex;
    flex-direction: column;
-  
 }
 
 .input_q {
@@ -33,18 +118,75 @@ main {
     border: 1px solid #FFFFFF;
     border-radius: 9px;
     outline: none;
-    border: none;
+    font: normal normal normal 18px/22px 'Montserrat',cursive;
+    padding-left: 3%;
+   
 }
 
 .above_input {
     text-align: left;
     font: normal normal normal 18px/22px 'Montserrat',cursive;
     color: #FFFFFF;
+    margin-bottom: 1%;
+    margin-top: 5%;
+    opacity: 0.8;
 }
 
-h2 {
-    margin: 5%;
-    font: normal normal bold 30px/41px 'Nunito', sans-serif;
+.quiz_btn {
+    margin-top: 7%;
+    width: 287px;
+    height: 85px;
+    background: #37FFAF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 10px #30F3BE6D;
+    border-radius: 54px;
+    outline: none;
+    border: none;
+
+    text-align: center;
+    font: normal normal bold 30px/41px 'Nunito',sans-serif;
+    color: #3340A2;
+    transition: 300ms;
+}
+
+.quiz_btn:hover {
+    cursor: pointer;
+    background: #00FF99 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 17px #30F3BEAD;
+}
+
+.quiz_btn:active {
+    box-shadow: 0px 3px 10px #30F3BE6D;
+}
+
+.divider {
+    display: flex;
+    margin-left: 10%;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+}
+
+#or {
+    font: normal normal normal 30px/41px 'Nunito',sans-serif;
     color: #FFFFFF;
+}
+
+#or:before,#or:after {
+    position: relative;
+    display: block;
+    margin: 2em auto;
+    width: 20%;
+    height: 200px;
+    background-color: #ABFFFF;
+    content: "";
+}
+
+
+.random {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
