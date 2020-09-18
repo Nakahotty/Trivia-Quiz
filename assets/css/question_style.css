@@ -87,7 +87,7 @@ main {
     flex-direction: column;
 }
 
-p {
+p,label {
     text-align: center; 
     font: normal normal normal 20px/24px 'Montserrat',sans-serif;
     color: #FFFFFF;
@@ -129,13 +129,13 @@ p {
     margin-top: 1em;
 }
 
-.awnsers {
+.answers {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
 }
 
-.awnser {
+.answer {
     display: flex;
     align-items: center;
     width: 100%;
@@ -144,27 +144,24 @@ p {
     transition: 500ms;
 }
 
-.awnser:hover {
+.answer:hover {
     cursor: pointer;
     height: 7vh;
     background-color: rgb(255, 255, 255,0.2);
 }
 
 .marker {
+    display: block;
     width: 35px;
     height: 35px;
-    border: none;
-    outline: none;
-    border-radius: 100%;
-    margin-right: 2em;
-    margin-left: 5em;
-}
+    margin: 0 2em;
+} 
 
 .marker:hover {
     cursor: pointer;
 }
 
-li p {
+li label {
     width: 90%;
     text-align: left;
 }
