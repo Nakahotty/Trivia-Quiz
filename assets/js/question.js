@@ -47,14 +47,18 @@ function getAnswers (incorrect_answers, correct_answer) {
     }
 }
 
+const q_type = document.querySelector('.question_type');
+const q_count = document.querySelector('.count');
+const q = document.querySelector('.question');
+const next_btn = document.querySelector('.next');
+
 function useAPIdata(questions) {
-    const q_type = document.querySelector('.question_type');
-    const q_count = document.querySelector('.count');
-    const q = document.querySelector('.question');
-    const next_btn = document.querySelector('.next');
     q_type.innerHTML = questions[0].category + ", " + questions[0].difficulty;
     q_count.innerHTML = '1/' + questions.length;
     q.innerHTML = questions[0].question; 
+    console.log(questions);
+
+    
     
     getAnswers(questions[0].incorrect_answers,questions[0].correct_answer);
 }
