@@ -40,9 +40,27 @@ start_btn.addEventListener('click', () => {
     window.location = "./question.html?amount=" + number_of_questions.value + "&category=" + topic_id + "&difficulty=" + difficullty.value;     
 });
 
-/* this uses them to make an API call 
-fetch('https://opentdb.com/api.php'+queryString,)
-    .then(res => {
-        return res.json();
-    })
-    .then(data => console.log(data)) */
+let index = 0;
+let randomID = 0;
+let numOfQuestions = 0;
+
+fetch('https://opentdb.com/api_category.php')
+        .then(res => {
+            return res.json();
+        })
+        .then(data => {
+            categories = data.trivia_categories;
+            index = Math.floor(Math.random() * categories.length);
+            randomID = categories[index].id;
+            numOfQuestions = Math.floor(Math.random() * 9) + 1;
+
+            const random_btn = document.querySelector('.random_btn');
+            const random_nav_btn = document.querySelector('.random_nav_btn');
+
+            random_btn.addEventListener('click', () => {
+                window.location = " ./random.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=easy";
+            })
+            random_nav_btn.addEventListener('click', () => {
+                window.location = " ./random.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=easy";
+            })
+        })
