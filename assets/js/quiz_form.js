@@ -58,9 +58,9 @@ fetch('https://opentdb.com/api_category.php')
             const random_nav_btn = document.querySelector('.random_nav_btn');
 
             random_btn.addEventListener('click', () => {
-                window.location = " ./random.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=easy";
+                window.location = " ./question.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=easy";
             })
             random_nav_btn.addEventListener('click', () => {
-                window.location = " ./random.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=easy";
+                window.location = " ./question.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=easy";
             })
         })

@@ -24,8 +24,7 @@ function getAnswer(answer_choice) {
 
     let answer = document.createElement('li');
     answer.classList.add('answer');
-    answer.id = 'a1';
-    let answer_text = document.createElement('label');
+    let answer_text = document.createElement('p');
     answer_text.classList.add('answer_text');
     answer_text.innerHTML = answer_choice;
     answer_text.value = answer_choice;

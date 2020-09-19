@@ -23,6 +23,6 @@ fetch('https://opentdb.com/api_category.php')
 
             const random_btn = document.querySelector('.random_btn');
             random_btn.addEventListener('click', () => {
-                window.location = " ./random.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=" + difficullty;
+                window.location = " ./question.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=" + difficullty;
             })
         })
