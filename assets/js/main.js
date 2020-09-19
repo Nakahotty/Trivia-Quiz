@@ -24,7 +24,9 @@ fetch('https://opentdb.com/api_category.php')
             numOfQuestions = Math.floor(Math.random() * 9) + 1;
 
             const random_btn = document.querySelector('.random_btn');
-            random_btn.addEventListener('click', () => {
-                window.location = " ./question.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=" + difficullty;
+            if (random_btn) {
+                random_btn.addEventListener('click', () => {
+                    window.location = " ./question.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=" + difficullty;
             })
+            }
         })

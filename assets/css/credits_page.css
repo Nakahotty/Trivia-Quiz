@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #3340A2 0% 0% no-repeat padding-box;
+}
+
+nav {
+    display: flex;
+    float: left;
+    width: 75px;
+    height: 100vh;
+    border-right: 1px solid #707070;
+    justify-content: center;
+    position: relative;
+    background: #3340A2 0% 0% no-repeat padding-box;
+    z-index: 999;
+}
+
+
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav ul {
+    list-style: none;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+nav ul li {
+    width: 100%;
+    height: 85px;
+    transition: 0.3s all;
+    cursor: pointer;
+    padding: 0;
+}
+
+nav ul li a {
+    margin: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li:hover {
+    background-color: #FD9EFF;
+    transition: 0.3s all;
+}
+
+.active {
+    background-color: #FD9EFF;
+    transition: 0.3s all;
+}
+
+nav ul a {
+    display: block;
+}
+
+nav ul li a img {
+    display: block;
+    max-width: 30px;
+}
+
+nav .contact {
+    bottom: 10px;
+}
+
+header .bg {
+    position: absolute;
+    bottom: 0;
+    object-fit: cover;
+    max-width:100%;
+    max-height:100%;
+}
+
+.active {
+    background-color: #FD9EFF;
+    transition: 0.3s all;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background: #3340A2 0% 0% no-repeat padding-box;
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.content h3 {
+    text-align: left;
+    font: normal normal bold 30px Nunito;
+    padding-top: 30px;
+    padding-left: 35px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+#api {
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: row;
+    padding-left: 30px;
+    margin-top: 30px;
+}
+
+#api .text {
+    margin-left: 30px;
+}
+
+#api h3 {
+    padding-left: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+#api a {
+    text-align: left;
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    color: #37FFAF;
+    outline: none;
+    text-decoration: none;
+    border-bottom: 1px solid #37FFAF;
+}
+
+#api img {
+    background: black;
+}

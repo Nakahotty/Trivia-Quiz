@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/credits_page.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <title>Trivia Quiz</title>
@@ -11,7 +11,7 @@
 <body>
     <nav>
         <ul class="quizes">
-            <li class="active">
+            <li>
                 <a href="./index.html">
                     <img src="assets/img/navbar_icons/home.png" alt="Home">
                 </a>
@@ -34,7 +34,7 @@
                     <img src="assets/img/navbar_icons/dev.png" alt="Developers">
                 </a>
             </li>
-            <li>
+            <li class="active">
                 <a href="./credits_page.html">
                     <img src="assets/img/navbar_icons/credits.png" alt="Credits">
                 </a>
@@ -45,11 +45,15 @@
     <header>
         <div class="background">
             <div class="content">
-                <img src="assets//img/flash.png" alt="Flash">
-                <h1>TRIVIA QUIZ</h1>
-                <p>Test your knowledge!</p>
+                <h3>Special <span style="color: #37FFAF;">thank you</span> to...</h3>
 
-                <button id="start_quiz">Take a quiz</button>
+                <section id="api">
+                    <img src="assets/img/credits_logo.png" alt="Open Trivia">
+                    <div class="text">
+                        <h3>Open Trivia API</h3>
+                        <a target="_blank" href="https://opentdb.com/">Website</a>
+                    </div>
+                </section>
             </div>
         </div>
 
