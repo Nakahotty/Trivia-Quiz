@@ -115,6 +115,9 @@ function useAPIdata(questions) {
 
     next_btn.addEventListener('click', () => {
         
+        if (q_index + 1 == questions.length) 
+            next_btn.innerHTML = "Finish";
+
         if(q_index == questions.length) {
             console.log(result);
             window.location = "./result.html?amount=" + 'result=' + result + '&total_questions=' + questions.length;
