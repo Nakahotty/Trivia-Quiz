@@ -1,8 +1,10 @@
 const start_quiz = document.querySelector('#start_quiz');
 
-start_quiz.addEventListener('click', () => {
-    window.location = " ./quiz_form.html";
-});
+if (start_quiz) {
+    start_quiz.addEventListener('click', () => {
+        window.location = " ./quiz_form.html";
+    });
+}
 
 let index = 0;
 let randomID = 0;
@@ -23,6 +25,6 @@ fetch('https://opentdb.com/api_category.php')
 
             const random_btn = document.querySelector('.random_btn');
             random_btn.addEventListener('click', () => {
-                window.location = " ./random.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=" + difficullty;
+                window.location = " ./question.html?amount=" + numOfQuestions + "&category=" + randomID + "&difficulty=" + difficullty;
             })
         })
