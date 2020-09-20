@@ -73,6 +73,11 @@ function startQuiz(questions) {
     q_type.innerHTML = questions[q_index].category + ", " + questions[q_index].difficulty;
     q_count.innerHTML = (q_index + 1) + "/" + questions.length;
     q.innerHTML = questions[q_index].question; 
+
+    // Result
+    localStorage.setItem('category', questions[q_index].category);
+    localStorage.setItem('difficulty', questions[q_index].difficulty)
+    localStorage.setItem('numOfQuestions', questions.length);
 }
 
 function initAnswers(questions) {
