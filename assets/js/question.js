@@ -99,10 +99,13 @@ function checkAnswer(question) {
     }
     
     console.log(question.correct_answer);
+    
 
     if(document.getElementById('ans' + answered_index).innerHTML == question.correct_answer){
         result++;
     }
+    console.log(document.getElementById('ans' + answered_index).innerHTML);
+    console.log(result);
     q_index++;
 }
 
@@ -111,10 +114,9 @@ function useAPIdata(questions) {
     
     startQuiz(questions);
     initAnswers(questions);
-    checkAnswer(questions[q_index]);
 
     next_btn.addEventListener('click', () => {
-        
+        checkAnswer(questions[q_index]);
         if (q_index + 1 == questions.length) 
             next_btn.innerHTML = "Finish";
 
@@ -125,7 +127,7 @@ function useAPIdata(questions) {
         }
         
         initAnswers(questions);
-        checkAnswer(questions[q_index]);
+       
         
     })
 }
