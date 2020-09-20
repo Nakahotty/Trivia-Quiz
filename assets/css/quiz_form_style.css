@@ -79,9 +79,15 @@ nav .contact {
     stroke-width: 0;
 }
 
-svg {
+.svg_container {
+    margin-top: -0.4%;
     transform: rotate(180deg);
     width: 100%;
+}
+
+svg {
+   
+    animation: slide-upwards 1s ease;
 }
 
 path {
@@ -107,6 +113,9 @@ main {
     height: 75vh;
     display: flex;
     background: #3340A2 0% 0% no-repeat padding-box;
+
+    animation: slide-downwards 1s ease;
+    
 }
 
 .quiz_console {
@@ -204,3 +213,43 @@ h2 {
     align-items: center;
 }
 
+
+@keyframes slide-upwards {
+    0% {
+        opacity: 0.3;
+        transform: translateY(700px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-downwards {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-700px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0.1;
+    }
+    50% {
+        opacity: 0.5;
+    }100% {
+        opacity: 1;
+    }
+}

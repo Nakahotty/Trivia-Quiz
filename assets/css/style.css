@@ -93,6 +93,8 @@ header .bg {
     height: 75%;
     background: #3340A2 0% 0% no-repeat padding-box;
     z-index: 1;
+
+    animation: slide-downwards 1s ease;
 }
 
 .content {
@@ -142,4 +144,18 @@ header .bg {
 .content button:hover {
     box-shadow: 0px 3px 17px #30F3BEAD;
     transition: 0.3s all;
+}
+
+@keyframes slide-downwards {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-700px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
