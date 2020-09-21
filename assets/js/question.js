@@ -12,6 +12,7 @@ const answers = document.querySelector('.answers');
 let result = 0;
 let q_index = 0;
 
+let timeleft = 60;
 
 
 let api_req = "https://opentdb.com/api.php" + queryString;
@@ -94,6 +95,7 @@ function initAnswers(questions) {
     appendAnswers();
     addingEventListenerToAnswers();
     next_btn.disabled = true;
+    timeleft = 60;
     
 }
 
@@ -105,15 +107,39 @@ function checkAnswer(question) {
         }
     }
     
-    console.log(question.correct_answer);
-    
-    if(document.getElementById('ans' + answered_index).innerHTML == question.correct_answer){
+    if(document.getElementById('ans' + answered_index).innerHTML == question.correct_answer) {
         result++;
     }
     console.log(document.getElementById('ans' + answered_index).innerHTML);
     console.log(result);
     localStorage.setItem('result', result);
-    q_index++;
+    
+}
+
+function timerCheck(questions) {
+    var answer_timer = setInterval(function () {
+        
+        
+        if (q_index + 1 == questions.length) 
+            next_btn.innerHTML = "Finish";
+
+        if(q_index == questions.length) {
+            console.log(result);
+            
+            window.location = "./result.html?amount=" + 'result=' + result + '&total_questions=' + questions.length;
+            return;
+        }
+
+        document.getElementById('tmr').innerHTML = timeleft + 's';
+        timeleft--;
+
+        if(timeleft <= -1) {
+            q_index++;
+            checkAnswer(questions[q_index]);
+            initAnswers(questions);
+            clearInterval(answer_time);
+        }
+    }, 1000);
 }
 
 
@@ -121,9 +147,11 @@ function useAPIdata(questions) {
     
     startQuiz(questions);
     initAnswers(questions);
-
+    timerCheck(questions);
+    
     next_btn.addEventListener('click', () => {
         checkAnswer(questions[q_index]);
+        q_index++;
         if (q_index + 1 == questions.length) 
             next_btn.innerHTML = "Finish";
 
