@@ -40,8 +40,6 @@ function getAnswers(incorrect_answers, correct_answer) {
     shuffleAnswers();
 }
 
-
-
 function appendAnswers(answer_choice) {
     
     for (let index = 0; index < answers_arr.length; index++) {

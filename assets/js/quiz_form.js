@@ -5,6 +5,7 @@ const start_btn = document.querySelector('.quiz_btn');
 let topic = document.querySelector('#topic_input');
 let difficullty = document.querySelector('#diff_input');
 let number_of_questions = document.querySelector('#num_of_questions');
+let warning = document.querySelector('#warning');
 
 console.log(queryString);
 
@@ -29,7 +30,15 @@ console.log(queryString);
   
 // Questions
 
+console.log(number_of_questions.value);
 start_btn.addEventListener('click', () => {
+    if(number_of_questions.value <= 0 || number_of_questions.value >= 11) {
+        warning.style.visibility='visible';
+        warning.style.animation = 'none';
+        warning.offsetHeight;
+        warning.style.animation =  null;
+        return;
+    }
     let topic_id = 0;
     for(let i = 0; i < categories.length; i++) {
         if(topic.value == categories[i].name) {
