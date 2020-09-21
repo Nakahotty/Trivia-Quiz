@@ -107,7 +107,6 @@ function checkAnswer(question) {
     
     console.log(question.correct_answer);
     
-
     if(document.getElementById('ans' + answered_index).innerHTML == question.correct_answer){
         result++;
     }
