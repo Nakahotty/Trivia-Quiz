@@ -12,6 +12,8 @@ const answers = document.querySelector('.answers');
 let result = 0;
 let q_index = 0;
 
+
+
 let api_req = "https://opentdb.com/api.php" + queryString;
 fetch(api_req)
     .then(res => {
@@ -111,6 +113,7 @@ function checkAnswer(question) {
     }
     console.log(document.getElementById('ans' + answered_index).innerHTML);
     console.log(result);
+    localStorage.setItem('result', result);
     q_index++;
 }
 
@@ -127,6 +130,7 @@ function useAPIdata(questions) {
 
         if(q_index == questions.length) {
             console.log(result);
+            
             window.location = "./result.html?amount=" + 'result=' + result + '&total_questions=' + questions.length;
             return;
         }

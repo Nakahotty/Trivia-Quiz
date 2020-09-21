@@ -1,3 +1,4 @@
+
 let result = localStorage.getItem('result');
 let numOfQuestions = localStorage.getItem('numOfQuestions');
 let category = localStorage.getItem('category');
