@@ -61,12 +61,12 @@
                         <option value="hard">Hard</option>
                     </select>
 
-                    <p class="above_input">Number of questions</p>
-                    <input type="number"     id="num_of_questions" class="input_q"></input>
+                    <p class="above_input">Number of questions <span id="warning">Number of questions must be between 1 and 10</span></p>
+                    <input type="number"     id="num_of_questions" class="input_q" min="1" max="10" value="1"></input>
 
 
                 </div>
-                <button class="quiz_btn">Take quiz</button>
+                <button class="quiz_btn" >Take quiz</button>
             </div>
 
             <div class="divider">
