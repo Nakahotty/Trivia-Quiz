@@ -127,6 +127,7 @@ header .bg {
     animation-name: load;
     animation-delay: 1.5s;
     animation-duration: 2.5s;
+    animation-fill-mode: forwards;
 }
 
 #developers .ivo, #developers .nasko {
