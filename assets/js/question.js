@@ -105,12 +105,12 @@ function checkAnswer(question) {
     
     console.log(question.correct_answer);
     
-
     if(document.getElementById('ans' + answered_index).innerHTML == question.correct_answer){
         result++;
     }
     console.log(document.getElementById('ans' + answered_index).innerHTML);
     console.log(result);
+    localStorage.setItem('result', result);
     q_index++;
 }
 
