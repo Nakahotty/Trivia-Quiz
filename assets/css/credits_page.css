@@ -116,6 +116,21 @@ header .bg {
     margin-bottom: 30px;
 }
 
+.heading {
+    animation-name: load;
+    animation-duration: 2s;
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 #api {
     display: flex;
     align-items: left;
@@ -123,6 +138,10 @@ header .bg {
     flex-direction: row;
     padding-left: 30px;
     margin-top: 30px;
+    opacity: 0;
+    animation-name: load;
+    animation-delay: 1.5s;
+    animation-duration: 2.5s;
 }
 
 #api .text {

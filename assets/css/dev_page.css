@@ -123,6 +123,10 @@ header .bg {
     flex-direction: row;
     padding-left: 20px;
     margin-top: 30px;
+    opacity: 0;
+    animation-name: load;
+    animation-delay: 1.5s;
+    animation-duration: 2.5s;
 }
 
 #developers .ivo, #developers .nasko {
@@ -137,6 +141,21 @@ header .bg {
     padding-top: 0px;
 }
 
+.heading {
+    animation-name: load;
+    animation-duration: 2s;
+}
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 #developers p {
     text-align: left;
     color: #fff;
@@ -149,3 +168,4 @@ header .bg {
     border: 1px solid #707070;;
     margin-right: 20px;
 }
+
