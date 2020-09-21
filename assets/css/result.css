@@ -90,6 +90,7 @@ nav .contact {
     background: #3340A2 0% 0% no-repeat padding-box;
     font-family: 'Nunito', sans-serif;
     color: white;
+    animation: slide-downwards 1s ease;
 }
 
 .content .elements {
@@ -144,4 +145,18 @@ nav .contact {
 .content .process .progress-circle {
     width: 140px;
     height: 140px;
+}
+
+@keyframes slide-downwards {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-700px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
