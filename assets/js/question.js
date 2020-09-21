@@ -12,8 +12,9 @@ const answers = document.querySelector('.answers');
 let result = 0;
 let q_index = 0;
 
-let timeleft = 60;
-
+let timeleft = 59;
+let tmr = document.getElementById('tmr');
+let timer_bar = document.getElementById('t_bar');
 
 let api_req = "https://opentdb.com/api.php" + queryString;
 fetch(api_req)
@@ -39,10 +40,12 @@ function getAnswers(incorrect_answers, correct_answer) {
     shuffleAnswers();
 }
 
+
+
 function appendAnswers(answer_choice) {
-
+    
     for (let index = 0; index < answers_arr.length; index++) {
-
+        
         let answer = document.createElement('li');
         answer.classList.add('answer');
         let answer_text = document.createElement('p');
@@ -83,6 +86,7 @@ function startQuiz(questions) {
     localStorage.setItem('numOfQuestions', questions.length);
 }
 
+
 function initAnswers(questions) {
 
     while(answers.firstChild){
@@ -90,13 +94,14 @@ function initAnswers(questions) {
     }
 
     q_count.innerHTML = (q_index + 1) + "/" + questions.length;
+    
     q.innerHTML = questions[q_index].question;
+    
     getAnswers(questions[q_index].incorrect_answers,questions[q_index].correct_answer);
     appendAnswers();
     addingEventListenerToAnswers();
     next_btn.disabled = true;
-    timeleft = 60;
-    
+    timeleft = 59;
 }
 
 function checkAnswer(question) {
@@ -113,26 +118,30 @@ function checkAnswer(question) {
     console.log(document.getElementById('ans' + answered_index).innerHTML);
     console.log(result);
     localStorage.setItem('result', result);
-    
-}
+    timerBarStart();
+ }
+
+ function timerBarStart() {
+    timer_bar.style.animation = 'none';
+    timer_bar.offsetHeight;
+    timer_bar.style.animation =  null;
+ }
+
 
 function timerCheck(questions) {
     var answer_timer = setInterval(function () {
-        
-        
         if (q_index + 1 == questions.length) 
-            next_btn.innerHTML = "Finish";
-
+        next_btn.innerHTML = "Finish";
+        
         if(q_index == questions.length) {
             console.log(result);
             
             window.location = "./result.html?amount=" + 'result=' + result + '&total_questions=' + questions.length;
             return;
         }
-
-        document.getElementById('tmr').innerHTML = timeleft + 's';
+        
+        tmr.innerHTML = timeleft + 's';
         timeleft--;
-
         if(timeleft <= -1) {
             q_index++;
             checkAnswer(questions[q_index]);
@@ -142,15 +151,17 @@ function timerCheck(questions) {
     }, 1000);
 }
 
-
 function useAPIdata(questions) {
     
     startQuiz(questions);
     initAnswers(questions);
     timerCheck(questions);
+    timerBarStart();
+       
     
+
     next_btn.addEventListener('click', () => {
-        checkAnswer(questions[q_index]);
+       checkAnswer(questions[q_index]);
         q_index++;
         if (q_index + 1 == questions.length) 
             next_btn.innerHTML = "Finish";
@@ -163,8 +174,6 @@ function useAPIdata(questions) {
         }
         
         initAnswers(questions);
-       
-        
     })
 }
 

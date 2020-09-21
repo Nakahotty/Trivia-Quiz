@@ -79,7 +79,7 @@ main {
     align-items: center;
     flex-direction: column;
     background: #3340A2 0% 0% no-repeat padding-box;
-
+    animation: slide-downwards 1s ease;
 }
 
 .top {
@@ -107,7 +107,9 @@ p,label {
     font: normal normal bold 30px/41px 'Nunito',sans-serif;
     color: #FFFFFF;
     margin-top: 1em;
+    transition: opacity 200ms linear;
 }
+
 
 .time {
     text-align: center;
@@ -129,7 +131,17 @@ p,label {
     height: 15px;
     background-color: #FD9EFF;
     margin-top: 1em;
+
+    animation: progressbar-countdown;
+    animation-duration: 60s;
+
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+
+   
 }
+
 
 .answers {
     display: flex;
@@ -207,6 +219,15 @@ li label {
     box-shadow: none;
 }
 
+@keyframes progressbar-countdown {
+    0% {
+      width: 100%;
+    }
+    100% {
+      width: 0%;
+    }
+  }
+
 @keyframes slide-downwards {
     0% {
         opacity: 0.3;
@@ -225,9 +246,21 @@ li label {
     0% {
         opacity: 0.1;
     }
-    50% {
-        opacity: 0.5;
-    }100% {
+    100%{
         opacity: 1;
+    }
+}
+
+@keyframes slide-downwards {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-700px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
