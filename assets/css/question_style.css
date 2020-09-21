@@ -114,6 +114,7 @@ p,label {
     font: normal normal bold 55px/67px 'Montserrat',sans-serif;
     color: #FFFFFF;
     margin: 3% 0;
+    transition: 1s;
 }
 
 .middle {
