@@ -88,7 +88,7 @@ main {
     flex-direction: column;
 }
 
-p,label {
+p {
     text-align: center; 
     font: normal normal normal 20px/24px 'Montserrat',sans-serif;
     color: #FFFFFF;
@@ -96,10 +96,15 @@ p,label {
 
 .question_type {
     margin-top: 3%;
+    animation: fade-in 1s ease;
 }
 
 .count {
     margin-top: 3%;
+}
+
+#curr_q {
+    animation: fade-in 1s ease;
 }
 
 .question {
@@ -108,16 +113,17 @@ p,label {
     color: #FFFFFF;
     margin-top: 1em;
     transition: opacity 200ms linear;
+    animation: fade-in 1s ease;
 }
-
 
 .time {
     text-align: center;
     font: normal normal bold 55px/67px 'Montserrat',sans-serif;
     color: #FFFFFF;
     margin: 3% 0;
-    transition: 1s;
+    animation: fade-in 1s ease;
 }
+
 
 .middle {
     width: 100%;
@@ -138,8 +144,6 @@ p,label {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
-
-   
 }
 
 .seconds-40 {
@@ -149,7 +153,6 @@ p,label {
 .seconds-20 {
     animation-duration: 17s!important;
 }
-
 
 .answers {
     display: flex;
@@ -165,6 +168,7 @@ p,label {
     height: 6vh;
     margin-top: 3%;
     transition: 500ms;
+    
 }
 
 .answer:hover {
@@ -184,9 +188,10 @@ p,label {
     cursor: pointer;
 }
 
-li label {
+li p {
     width: 90%;
     text-align: left;
+    animation: fade-in 1s ease;
 }
 
 .bottom {
