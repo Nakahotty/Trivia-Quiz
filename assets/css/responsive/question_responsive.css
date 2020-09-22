@@ -40,7 +40,42 @@
 
 /* Small devices (tablets, 768px and up) */
 @media (max-width: 767px) {
-    
+    * {
+        box-sizing: border-box;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    .question_type {
+        margin-top: 30%;
+    }
+
+    .time {
+        font-size: 32px;
+    }
+
+    li p {
+        font-size: 18px;
+    }
+
+    .next {
+        width: 230px;
+        height: 70px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .question {
+        font-size: 25px;
+        line-height: 28px;
+    }
+
+    .timer {
+        margin-top: 0;
+    }
 }
 
 /* Medium devices (desktops, 992px and up) */
