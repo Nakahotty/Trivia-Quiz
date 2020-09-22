@@ -99,7 +99,20 @@ function initAnswers(questions) {
     appendAnswers();
     addingEventListenerToAnswers();
     next_btn.disabled = true;
-    timeleft = 59;
+
+    let difficulty = localStorage.getItem('difficulty');
+
+    if (difficulty === 'easy') {
+        timeleft = 59;
+    }
+    else if (difficulty === 'medium') {
+        timeleft = 40;
+        document.getElementById('t_bar').classList.add('seconds-40');    
+    }
+    else if (difficulty === 'hard') {
+        timeleft = 20;
+        document.getElementById('t_bar').classList.add('seconds-20');
+    }
 }
 
 function checkAnswer(question) {
@@ -146,7 +159,7 @@ function timerCheck(questions) {
             initAnswers(questions);
             clearInterval(answer_time);
         }
-    }, 1000);
+    }, 700);
 }
 
 function useAPIdata(questions) {

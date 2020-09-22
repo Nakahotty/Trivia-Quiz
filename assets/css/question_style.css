@@ -142,6 +142,14 @@ p,label {
    
 }
 
+.seconds-40 {
+    animation-duration: 37s!important;
+}
+
+.seconds-20 {
+    animation-duration: 17s!important;
+}
+
 
 .answers {
     display: flex;
