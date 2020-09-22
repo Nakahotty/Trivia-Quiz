@@ -98,6 +98,7 @@ header .bg {
     height: 50%;
     background: #3340A2 0% 0% no-repeat padding-box;
     z-index: 1;
+    animation: slide-downwards 1s ease;
 }
 
 .content {
@@ -168,5 +169,20 @@ header .bg {
     border-radius: 50%;
     border: 1px solid #707070;;
     margin-right: 20px;
+}
+
+
+@keyframes slide-downwards {
+    0% {
+        opacity: 0.3;
+        transform: translateY(-700px);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
