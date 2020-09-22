@@ -3,6 +3,7 @@ console.log(queryString);
 
 const q_type = document.querySelector('.question_type');
 const q_count = document.querySelector('.count');
+const curr_q = document.querySelector('#curr_q');
 const q = document.querySelector('.question');
 const next_btn = document.querySelector('.next');
 
@@ -40,7 +41,7 @@ function getAnswers(incorrect_answers, correct_answer) {
     shuffleAnswers();
 }
 
-function appendAnswers(answer_choice) {
+function appendAnswers() {
     
     for (let index = 0; index < answers_arr.length; index++) {
         
@@ -61,6 +62,7 @@ function appendAnswers(answer_choice) {
         answer.appendChild(answer_btn);
         answer.appendChild(answer_text);
         answers.appendChild(answer);
+        animationRefresh(answer_text);
     }
 }
 
@@ -91,13 +93,19 @@ function initAnswers(questions) {
         answers.removeChild(answers.firstChild);
     }
 
-    q_count.innerHTML = (q_index + 1) + "/" + questions.length;
+    curr_q.innerHTML = q_index + 1;
+    q_count.appendChild(curr_q);
+    animationRefresh(curr_q);
+    q_count.innerHTML = curr_q.innerHTML + "/" + questions.length;
     
+
     q.innerHTML = questions[q_index].question;
-    
+    animationRefresh(q);
+
     getAnswers(questions[q_index].incorrect_answers,questions[q_index].correct_answer);
     appendAnswers();
     addingEventListenerToAnswers();
+
     next_btn.disabled = true;
     timeleft = 59;
 }
@@ -116,13 +124,13 @@ function checkAnswer(question) {
     console.log(document.getElementById('ans' + answered_index).innerHTML);
     console.log(result);
     localStorage.setItem('result', result);
-    timerBarStart();
+    animationRefresh(timer_bar);
  }
 
- function timerBarStart() {
-    timer_bar.style.animation = 'none';
-    timer_bar.offsetHeight;
-    timer_bar.style.animation =  null;
+function animationRefresh(element) {
+    element.style.animation = 'none';
+    element.offsetHeight;
+    element.style.animation =  null;
  }
 
 
@@ -144,7 +152,7 @@ function timerCheck(questions) {
             q_index++;
             checkAnswer(questions[q_index]);
             initAnswers(questions);
-            clearInterval(answer_time);
+            clearInterval(answer_timer);
         }
     }, 1000);
 }
@@ -154,10 +162,7 @@ function useAPIdata(questions) {
     startQuiz(questions);
     initAnswers(questions);
     timerCheck(questions);
-    timerBarStart();
-       
     
-
     next_btn.addEventListener('click', () => {
        checkAnswer(questions[q_index]);
         q_index++;
