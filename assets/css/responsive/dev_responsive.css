@@ -1,0 +1,141 @@
+/* Small phones */  
+@media (max-width: 450px) {
+    .background {
+        height: 100vh;
+    }
+
+    .content {
+        text-align: center;
+        padding-left: 1px;
+    }
+
+    .content h3 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #developers {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    #developers h3 {
+        text-align: center!important;
+    }
+
+    #developers img {
+        width: 23%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    #developers p {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    #developers .ivo, #developers .nasko {
+        flex-direction: column;
+    }
+
+    #api {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    #api h3 {
+        text-align: center!important;
+    }
+
+    #api img {
+        width: 30%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    #api p {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    #api .text {
+        margin-left: 0px;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+    .background {
+        height: 100vh;
+    }
+
+    .content {
+        text-align: center;
+        padding-left: 1px;
+    }
+
+    .content h3 {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    #developers {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    #developers h3 {
+        text-align: center!important;
+    }
+
+    #developers img {
+        width: 23%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    #developers p {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    #developers .ivo, #developers .nasko {
+        flex-direction: column;
+    }
+
+    #api {
+        padding-left: 0px;
+        flex-direction: column;
+    }
+
+    #api h3 {
+        text-align: center!important;
+    }
+
+    #api img {
+        width: 30%;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    #api p {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    #api .text {
+        margin-left: 0px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 767px) and (max-width: 991px) {
+    
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 991px) and (max-width: 1200px) {
+    
+}
