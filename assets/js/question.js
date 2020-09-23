@@ -15,6 +15,7 @@ let q_index = 0;
 
 let timeleft = 59;
 let tmr = document.getElementById('tmr');
+let seconds = document.getElementById('sec');
 let timer_bar = document.getElementById('t_bar');
 
 let api_req = "https://opentdb.com/api.php" + queryString;
@@ -28,17 +29,18 @@ fetch(api_req)
         useAPIdata(questions);
     })
 
-function shuffleAnswers() {
-    for (let i = answers_arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [answers_arr[i], answers_arr[j]] = [answers_arr[j], answers_arr[i]];
-    }
-}
 
 function getAnswers(incorrect_answers, correct_answer) {
     answers_arr = incorrect_answers;
     answers_arr.push(correct_answer);
     shuffleAnswers();
+}
+
+function shuffleAnswers() {
+    for (let i = answers_arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [answers_arr[i], answers_arr[j]] = [answers_arr[j], answers_arr[i]];
+    }
 }
 
 function appendAnswers() {
@@ -86,6 +88,30 @@ function startQuiz(questions) {
     localStorage.setItem('numOfQuestions', questions.length);
 }
 
+function setTimeDifficulty() {
+    let difficulty = localStorage.getItem('difficulty');
+
+    if (difficulty === 'easy') {
+        timeleft = 59;
+        tmr.innerHTML = '60';
+    }
+    else if (difficulty === 'medium') {
+        timeleft = 39;
+        tmr.innerHTML = '40';
+        document.getElementById('t_bar').classList.add('seconds-40');    
+    }
+    else if (difficulty === 'hard') {
+        timeleft = 19;
+        tmr.innerHTML = '20';
+        document.getElementById('t_bar').classList.add('seconds-20');
+    }
+}
+
+function goToResultPage(questions) {
+    console.log(result);
+    window.location = "./result.html?amount=" + 'result=' + result + '&total_questions=' + questions.length;
+}
+
 
 function initAnswers(questions) {
 
@@ -106,21 +132,9 @@ function initAnswers(questions) {
     appendAnswers();
     addingEventListenerToAnswers();
 
+    animationRefresh(timer_bar);
     next_btn.disabled = true;
-
-    let difficulty = localStorage.getItem('difficulty');
-
-    if (difficulty === 'easy') {
-        timeleft = 59;
-    }
-    else if (difficulty === 'medium') {
-        timeleft = 40;
-        document.getElementById('t_bar').classList.add('seconds-40');    
-    }
-    else if (difficulty === 'hard') {
-        timeleft = 20;
-        document.getElementById('t_bar').classList.add('seconds-20');
-    }
+    setTimeDifficulty();
 }
 
 function checkAnswer(question) {
@@ -137,8 +151,7 @@ function checkAnswer(question) {
     console.log(document.getElementById('ans' + answered_index).innerHTML);
     console.log(result);
     localStorage.setItem('result', result);
-    animationRefresh(timer_bar);
- }
+}
 
 function animationRefresh(element) {
     element.style.animation = 'none';
@@ -153,21 +166,20 @@ function timerCheck(questions) {
         next_btn.innerHTML = "Finish";
         
         if(q_index == questions.length) {
-            console.log(result);
-            
-            window.location = "./result.html?amount=" + 'result=' + result + '&total_questions=' + questions.length;
+            goToResultPage(questions);
             return;
         }
-        
-        tmr.innerHTML = timeleft + 's';
+     
+        tmr.innerHTML = timeleft;
+        animationRefresh(tmr);
         timeleft--;
+
         if(timeleft <= -1) {
             q_index++;
             checkAnswer(questions[q_index]);
             initAnswers(questions);
-            clearInterval(answer_timer);
         }
-    }, 700);
+    }, 1000);
 }
 
 function useAPIdata(questions) {
@@ -177,15 +189,14 @@ function useAPIdata(questions) {
     timerCheck(questions);
     
     next_btn.addEventListener('click', () => {
-       checkAnswer(questions[q_index]);
+        checkAnswer(questions[q_index]);
         q_index++;
+
         if (q_index + 1 == questions.length) 
             next_btn.innerHTML = "Finish";
 
         if(q_index == questions.length) {
-            console.log(result);
-            
-            window.location = "./result.html?amount=" + 'result=' + result + '&total_questions=' + questions.length;
+            goToResultPage(questions);
             return;
         }
         
