@@ -10,26 +10,41 @@
 
     .question_type {
         margin-top: 30%;
+        font-size: 18px;
     }
-
-    .time {
-        font-size: 32px;
-    }
-
-    li p {
+    
+    .count {
         font-size: 18px;
     }
 
+    .time {
+        font-size: 24px;
+        margin: 0 auto;
+    }
+
+    .answers {
+        margin-top: 1.5em;
+    }
+
+    .answer {
+        margin-top: 2%;
+    }
+
+    li p {
+        font-size: 16px;
+    }
+
     .next {
-        width: 230px;
-        height: 70px;
+        width: 180px;
+        height: 50px;
         display: block;
         margin: 0 auto;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        font-size: 25px;
     }
 
     .question {
-        font-size: 25px;
+        font-size: 18px;
         line-height: 28px;
     }
 
@@ -50,26 +65,41 @@
 
     .question_type {
         margin-top: 30%;
+        font-size: 18px;
     }
-
-    .time {
-        font-size: 32px;
-    }
-
-    li p {
+    
+    .count {
         font-size: 18px;
     }
 
+    .time {
+        font-size: 24px;
+        margin: 0 auto;
+    }
+
+    .answers {
+        margin-top: 1.5em;
+    }
+
+    .answer {
+        margin-top: 2%;
+    }
+
+    li p {
+        font-size: 16px;
+    }
+
     .next {
-        width: 230px;
-        height: 70px;
+        width: 180px;
+        height: 50px;
         display: block;
         margin: 0 auto;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
+        font-size: 25px;
     }
 
     .question {
-        font-size: 25px;
+        font-size: 18px;
         line-height: 28px;
     }
 
@@ -80,10 +110,16 @@
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 767px) and (max-width: 991px) {
-    
+    .next {
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 991px) and (max-width: 1200px) {
-    
+    .next {
+        display: block;
+        margin: 0 auto;
+    }
 }

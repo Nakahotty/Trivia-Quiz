@@ -151,7 +151,7 @@ h2 {
 }
 
 #warning {
-    visibility: hidden;
+    display: none;
     color: red;
     font-size: 15px;
     animation: fade-in 1s ease;

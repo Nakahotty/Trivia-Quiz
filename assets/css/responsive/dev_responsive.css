@@ -129,13 +129,3 @@
         margin-left: 0px;
     }
 }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: 767px) and (max-width: 991px) {
-    
-}
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 991px) and (max-width: 1200px) {
-    
-}

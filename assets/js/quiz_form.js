@@ -33,7 +33,7 @@ console.log(queryString);
 console.log(number_of_questions.value);
 start_btn.addEventListener('click', () => {
     if(number_of_questions.value <= 0 || number_of_questions.value >= 11) {
-        warning.style.visibility='visible';
+        warning.style.display='block';
         warning.style.animation = 'none';
         warning.offsetHeight;
         warning.style.animation =  null;
